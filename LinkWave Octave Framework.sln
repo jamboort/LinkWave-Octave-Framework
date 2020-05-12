@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkWave Octave Framework", "LinkWave Octave Framework\LinkWave Octave Framework.csproj", "{07E9C88F-C0C5-4A4F-8D3A-CC19FEC2E318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lc_octvmarsh", "lc_octvmarsh\lc_octvmarsh.csproj", "{21EFF52A-EF7B-42F8-8893-2E10699A0FAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8563F0D4-A5AF-480D-927B-863DA1285F6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07E9C88F-C0C5-4A4F-8D3A-CC19FEC2E318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E9C88F-C0C5-4A4F-8D3A-CC19FEC2E318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E9C88F-C0C5-4A4F-8D3A-CC19FEC2E318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E9C88F-C0C5-4A4F-8D3A-CC19FEC2E318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21EFF52A-EF7B-42F8-8893-2E10699A0FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EFF52A-EF7B-42F8-8893-2E10699A0FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EFF52A-EF7B-42F8-8893-2E10699A0FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EFF52A-EF7B-42F8-8893-2E10699A0FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C179D59-03A4-448E-AAB7-4F0D1A21D6E5}
+	EndGlobalSection
+EndGlobal

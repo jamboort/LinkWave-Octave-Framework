@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LinkWave_Octave_Framework.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OctaveToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tWlqsEKcdUesd8Yg83rXiRitEnd1d3mY</Value>
+    </Setting>
+    <Setting Name="OctaveUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">andrew_newton</Value>
+    </Setting>
+    <Setting Name="OctaveCompany" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">linkwave_technologies</Value>
+    </Setting>
+    <Setting Name="cnxString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
