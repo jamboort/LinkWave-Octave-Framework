@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lc_octvmarsh
+namespace lc_octvmarsh.Utils
 {
     /// <summary>
     /// The utility functions that are used in divers areas of the Octave framework
