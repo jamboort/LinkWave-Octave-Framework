@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+﻿using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+//using Newtonsoft.Json;
+//using Newtonsoft.Json.Converters;
 
 /// <summary>
 /// Framework class
@@ -10,153 +10,153 @@ using Newtonsoft.Json.Converters;
 namespace lc_octvmarsh
 {
 
-     public partial class OC_Device
+    public partial class OC_Device
     {
-        [JsonProperty("head")]
+        [JsonPropertyName("head")]
         public Head Head { get; set; }
 
-        [JsonProperty("body")]
+        [JsonPropertyName("body")]
         public Body[] Body { get; set; }
     }
 
     public class Body
     {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty("avSystemId")]
+        [JsonPropertyName("avSystemId")]
         public string AvSystemId { get; set; }
 
-        [JsonProperty("broadcastDate")]
+        [JsonPropertyName("broadcastDate")]
         public long BroadcastDate { get; set; }
 
-        [JsonProperty("companyId")]
+        [JsonPropertyName("companyId")]
         public string CompanyId { get; set; }
 
-        [JsonProperty("creationDate")]
+        [JsonPropertyName("creationDate")]
         public long CreationDate { get; set; }
 
-        [JsonProperty("creatorId")]
+        [JsonPropertyName("creatorId")]
         public string CreatorId { get; set; }
 
-        [JsonProperty("dirty")]
+        [JsonPropertyName("dirty")]
         public bool Dirty { get; set; }
 
-        [JsonProperty("hardware")]
+        [JsonPropertyName("hardware")]
         public Hardware Hardware { get; set; }
 
-        [JsonProperty("lastEditDate")]
+        [JsonPropertyName("lastEditDate")]
         public long? LastEditDate { get; set; }
 
-        [JsonProperty("lastEditorId")]
+        [JsonPropertyName("lastEditorId")]
         public string LastEditorId { get; set; }
 
-        [JsonProperty("lastSeen")]
+        [JsonPropertyName("lastSeen")]
         public long LastSeen { get; set; }
 
-        [JsonProperty("localActions")]
+        [JsonPropertyName("localActions")]
         public LocalActions LocalActions { get; set; }
 
-        [JsonProperty("localVersions")]
+        [JsonPropertyName("localVersions")]
         public LocalVersions LocalVersions { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("displayName")]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
 
-        [JsonProperty("observations")]
+        [JsonPropertyName("observations")]
         public Observations Observations { get; set; }
 
-        [JsonProperty("path")]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
 
-        [JsonProperty("provisioningStatus")]
+        [JsonPropertyName("provisioningStatus")]
         public string ProvisioningStatus { get; set; }
 
-        [JsonProperty("recentOperations")]
+        [JsonPropertyName("recentOperations")]
         public object[] RecentOperations { get; set; }
 
-        [JsonProperty("report")]
+        [JsonPropertyName("report")]
         public Report Report { get; set; }
 
-        [JsonProperty("state")]
+        [JsonPropertyName("state")]
         public State State { get; set; }
 
-        [JsonProperty("summary")]
+        [JsonPropertyName("summary")]
         public Summary Summary { get; set; }
 
-        [JsonProperty("synced")]
+        [JsonPropertyName("synced")]
         public bool Synced { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonPropertyName("tags")]
         public LocalActions Tags { get; set; }
 
-        [JsonProperty("timeSinceLastSeen")]
+        [JsonPropertyName("timeSinceLastSeen")]
         public long TimeSinceLastSeen { get; set; }
 
-        [JsonProperty("streamId")]
+        [JsonPropertyName("streamId")]
         public string StreamId { get; set; }
 
-        [JsonProperty("metadata")]
+        [JsonPropertyName("metadata")]
         public object Metadata { get; set; }
 
-        [JsonProperty("generatedDate", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("generatedDate")]
         public long GeneratedDate { get; set; }
 
-        [JsonProperty("location")]
+        [JsonPropertyName("location")]
         public object Location { get; set; }
 
-        [JsonProperty("hash")]
+        [JsonPropertyName("hash")]
         public object Hash { get; set; }
 
-        [JsonProperty("elems")]
+        [JsonPropertyName("elems")]
         public Elems Elems { get; set; }
 
-        [JsonProperty("version")]
+        [JsonPropertyName("version")]
         public long Version { get; set; }
     }
-    
+
     public class Elems
     {
-        [JsonProperty("remote")]
+        [JsonPropertyName("remote")]
         public Remote Remote { get; set; }
 
-        [JsonProperty("measure")]
+        [JsonPropertyName("measure")]
         public long Measure { get; set; }
     }
 
-        public class Remote
+    public class Remote
     {
-        [JsonProperty("sensors")]
+        [JsonPropertyName("sensors")]
         public Sensors Sensors { get; set; }
     }
 
     public class Sensors
     {
-        [JsonProperty("set1")]
+        [JsonPropertyName("set1")]
         public Set1 Set1 { get; set; }
     }
 
     public class Hardware
     {
-        [JsonProperty("fsn")]
+        [JsonPropertyName("fsn")]
         public string Fsn { get; set; }
 
-        [JsonProperty("iccid")]
+        [JsonPropertyName("iccid")]
         public string Iccid { get; set; }
 
-        [JsonProperty("countryCode")]
+        [JsonPropertyName("countryCode")]
         public string CountryCode { get; set; }
 
-        [JsonProperty("module")]
+        [JsonPropertyName("module")]
         public string Module { get; set; }
 
-        [JsonProperty("imei")]
+        [JsonPropertyName("imei")]
         public string Imei { get; set; }
 
-        [JsonProperty("model")]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     }
 
@@ -166,483 +166,478 @@ namespace lc_octvmarsh
 
     public class LocalVersions
     {
-        [JsonProperty("edge")]
+        [JsonPropertyName("edge")]
         public string Edge { get; set; }
 
-        [JsonProperty("legato")]
+        [JsonPropertyName("legato")]
         public string Legato { get; set; }
 
-        [JsonProperty("changeDate")]
+        [JsonPropertyName("changeDate")]
         public long ChangeDate { get; set; }
 
-        [JsonProperty("firmware")]
+        [JsonPropertyName("firmware")]
         public string Firmware { get; set; }
     }
 
     public class Observations
     {
-        [JsonProperty("/remote/sensors/set1/value")]
+        [JsonPropertyName("/remote/sensors/set1/value")]
         public RemoteSensorsSet1Value RemoteSensorsSet1Value { get; set; }
     }
 
     public class RemoteSensorsSet1Value
     {
-        [JsonProperty("set_1")]
+        [JsonPropertyName("set_1")]
         public Set1 Set1 { get; set; }
     }
 
     public class Set1
     {
-        [JsonProperty("destination")]
+        [JsonPropertyName("destination")]
         public string Destination { get; set; }
 
-        [JsonProperty("waterLevelLow")]
+        [JsonPropertyName("waterLevelLow")]
         public bool WaterLevelLow { get; set; }
 
-        [JsonProperty("DissolvedOxygen")]
+        [JsonPropertyName("DissolvedOxygen")]
         public long DissolvedOxygen { get; set; }
 
-        [JsonProperty("temperature2", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("temperature2")]
         public double? Set1Temperature2 { get; set; }
 
-        [JsonProperty("Turbidity")]
+        [JsonPropertyName("Turbidity")]
         public long Turbidity { get; set; }
 
-        [JsonProperty("flowIn")]
+        [JsonPropertyName("flowIn")]
         public double FlowIn { get; set; }
 
-        [JsonProperty("temperature", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("temperature")]
         public double? Temperature { get; set; }
 
-        [JsonProperty("flowOut")]
+        [JsonPropertyName("flowOut")]
         public double FlowOut { get; set; }
 
-        [JsonProperty("Debris")]
+        [JsonPropertyName("Debris")]
         public bool Debris { get; set; }
 
-        [JsonProperty("waterLevelHigh")]
+        [JsonPropertyName("waterLevelHigh")]
         public bool WaterLevelHigh { get; set; }
 
-        [JsonProperty("temperature 1", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("temperature 1")]
         public double? Temperature1 { get; set; }
 
-        [JsonProperty("temperature 2", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("temperature 2")]
         public double? Temperature2 { get; set; }
     }
 
     public class Report
     {
-        [JsonProperty("developerMode")]
+        [JsonPropertyName("developerMode")]
         public DeveloperMode DeveloperMode { get; set; }
 
-        [JsonProperty("signal")]
+        [JsonPropertyName("signal")]
         public Signal Signal { get; set; }
     }
 
     public class DeveloperMode
     {
-        [JsonProperty("enable")]
+        [JsonPropertyName("enable")]
         public Enable Enable { get; set; }
     }
 
     public class Enable
     {
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public bool Value { get; set; }
 
-        [JsonProperty("timestamp")]
+        [JsonPropertyName("timestamp")]
         public long Timestamp { get; set; }
     }
 
     public class Signal
     {
-        [JsonProperty("strength")]
+        [JsonPropertyName("strength")]
         public Strength Strength { get; set; }
     }
 
     public class Strength
     {
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public long Value { get; set; }
 
-        [JsonProperty("timestamp")]
+        [JsonPropertyName("timestamp")]
         public long Timestamp { get; set; }
     }
 
     public class State
     {
-        [JsonProperty("/io/config")]
+        [JsonPropertyName("/io/config")]
         public IoConfig IoConfig { get; set; }
     }
 
     public class IoConfig
     {
-        [JsonProperty("devs")]
+        [JsonPropertyName("devs")]
         public Dev[] Devs { get; set; }
     }
 
     public class Dev
     {
-        [JsonProperty("conf")]
+        [JsonPropertyName("conf")]
         public Conf[] Conf { get; set; }
 
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
     }
 
     public class Conf
     {
-        [JsonProperty("baud")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonPropertyName("baud")]
         public long Baud { get; set; }
 
-        [JsonProperty("routing")]
+        [JsonPropertyName("routing")]
         public string Routing { get; set; }
 
-        [JsonProperty("std")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonPropertyName("std")]
         public long Std { get; set; }
 
-        [JsonProperty("wire")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonPropertyName("wire")]
         public long Wire { get; set; }
 
-        [JsonProperty("stop")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonPropertyName("stop")]
         public long Stop { get; set; }
 
-        [JsonProperty("own")]
+        [JsonPropertyName("own")]
         public string Own { get; set; }
 
-        [JsonProperty("bits")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        [JsonPropertyName("bits")]
         public long Bits { get; set; }
 
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty("flow")]
+        [JsonPropertyName("flow")]
         public string Flow { get; set; }
 
-        [JsonProperty("pair")]
+        [JsonPropertyName("pair")]
         public string Pair { get; set; }
     }
 
     public class Summary
     {
-        [JsonProperty("/diagnostic/logs/period")]
+        [JsonPropertyName("/diagnostic/logs/period")]
         public TartuGecko DiagnosticLogsPeriod { get; set; }
 
-        [JsonProperty("/util/ulpm/value")]
+        [JsonPropertyName("/util/ulpm/value")]
         public TartuGecko UtilUlpmValue { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/persistence/trigger")]
+        [JsonPropertyName("/cloudInterface/store_forward/persistence/trigger")]
         public TartuGecko CloudInterfaceStoreForwardPersistenceTrigger { get; set; }
 
-        [JsonProperty("/util/cellular/statistics/trigger")]
+        [JsonPropertyName("/util/cellular/statistics/trigger")]
         public TartuGecko UtilCellularStatisticsTrigger { get; set; }
 
-        [JsonProperty("/util/sim/info/value")]
+        [JsonPropertyName("/util/sim/info/value")]
         public TartuGecko UtilSimInfoValue { get; set; }
 
-        [JsonProperty("/util/ulpm/config")]
+        [JsonPropertyName("/util/ulpm/config")]
         public TartuGecko UtilUlpmConfig { get; set; }
 
-        [JsonProperty("/util/sim/info/trigger")]
+        [JsonPropertyName("/util/sim/info/trigger")]
         public TartuGecko UtilSimInfoTrigger { get; set; }
 
-        [JsonProperty("/modbus/config")]
+        [JsonPropertyName("/modbus/config")]
         public TartuGecko ModbusConfig { get; set; }
 
-        [JsonProperty("/cloudInterface/connected/value")]
+        [JsonPropertyName("/cloudInterface/connected/value")]
         public TartuGecko CloudInterfaceConnectedValue { get; set; }
 
-        [JsonProperty("/util/counter/enable")]
+        [JsonPropertyName("/util/counter/enable")]
         public TartuGecko UtilCounterEnable { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/persistence/enable")]
+        [JsonPropertyName("/cloudInterface/store_forward/persistence/enable")]
         public TartuGecko CloudInterfaceStoreForwardPersistenceEnable { get; set; }
 
-        [JsonProperty("/diagnostic/config")]
+        [JsonPropertyName("/diagnostic/config")]
         public TartuGecko DiagnosticConfig { get; set; }
 
-        [JsonProperty("/io/config/gpio")]
+        [JsonPropertyName("/io/config/gpio")]
         public TartuGecko IoConfigGpio { get; set; }
 
-        [JsonProperty("/remote/sensors/uplinkMeasured/period")]
+        [JsonPropertyName("/remote/sensors/uplinkMeasured/period")]
         public TartuGecko RemoteSensorsUplinkMeasuredPeriod { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/period")]
+        [JsonPropertyName("/cloudInterface/store_forward/period")]
         public CloudInterfaceDeveloperModeInactivityPeriod CloudInterfaceStoreForwardPeriod { get; set; }
 
-        [JsonProperty("/diagnostic/logs/filter")]
+        [JsonPropertyName("/diagnostic/logs/filter")]
         public TartuGecko DiagnosticLogsFilter { get; set; }
 
-        [JsonProperty("/util/time/enable")]
+        [JsonPropertyName("/util/time/enable")]
         public TartuGecko UtilTimeEnable { get; set; }
 
-        [JsonProperty("/location/coordinates/enable")]
+        [JsonPropertyName("/location/coordinates/enable")]
         public TartuGecko LocationCoordinatesEnable { get; set; }
 
-        [JsonProperty("/remote/sensors/uplinkMeasured/value")]
+        [JsonPropertyName("/remote/sensors/uplinkMeasured/value")]
         public RemoteSensorsControlsettingsUpValueClass RemoteSensorsUplinkMeasuredValue { get; set; }
 
-        [JsonProperty("/diagnostic/logs/value")]
+        [JsonPropertyName("/diagnostic/logs/value")]
         public TartuGecko DiagnosticLogsValue { get; set; }
 
-        [JsonProperty("/remote/sensors/set1/enable")]
+        [JsonPropertyName("/remote/sensors/set1/enable")]
         public TartuGecko RemoteSensorsSet1Enable { get; set; }
 
-        [JsonProperty("/remote/sensors/controlsettingsUp/value")]
+        [JsonPropertyName("/remote/sensors/controlsettingsUp/value")]
         public RemoteSensorsControlsettingsUpValueClass RemoteSensorsControlsettingsUpValue { get; set; }
 
-        [JsonProperty("/util/cellular/cells/enable")]
+        [JsonPropertyName("/util/cellular/cells/enable")]
         public TartuGecko UtilCellularCellsEnable { get; set; }
 
-        [JsonProperty("/remote/sensors/controlsettingsUp/enable")]
+        [JsonPropertyName("/remote/sensors/controlsettingsUp/enable")]
         public TartuGecko RemoteSensorsControlsettingsUpEnable { get; set; }
 
-        [JsonProperty("/location/coordinates/trigger")]
+        [JsonPropertyName("/location/coordinates/trigger")]
         public TartuGecko LocationCoordinatesTrigger { get; set; }
 
-        [JsonProperty("/util/delay/set")]
+        [JsonPropertyName("/util/delay/set")]
         public TartuGecko UtilDelaySet { get; set; }
 
-        [JsonProperty("/diagnostic/logs/enable")]
+        [JsonPropertyName("/diagnostic/logs/enable")]
         public TartuGecko DiagnosticLogsEnable { get; set; }
 
-        [JsonProperty("/remote/sensors/controlsettingsUp/period")]
+        [JsonPropertyName("/remote/sensors/controlsettingsUp/period")]
         public TartuGecko RemoteSensorsControlsettingsUpPeriod { get; set; }
 
-        [JsonProperty("/cloudInterface/developer_mode/enable")]
+        [JsonPropertyName("/cloudInterface/developer_mode/enable")]
         public TartuGecko CloudInterfaceDeveloperModeEnable { get; set; }
 
-        [JsonProperty("/util/cellular/cells/period")]
+        [JsonPropertyName("/util/cellular/cells/period")]
         public TartuGecko UtilCellularCellsPeriod { get; set; }
 
-        [JsonProperty("/remote/sensors/uplinkMeasured/enable")]
+        [JsonPropertyName("/remote/sensors/uplinkMeasured/enable")]
         public TartuGecko RemoteSensorsUplinkMeasuredEnable { get; set; }
 
-        [JsonProperty("/util/reboot/trigger")]
+        [JsonPropertyName("/util/reboot/trigger")]
         public TartuGecko UtilRebootTrigger { get; set; }
 
-        [JsonProperty("/util/counter/period")]
+        [JsonPropertyName("/util/counter/period")]
         public TartuGecko UtilCounterPeriod { get; set; }
 
-        [JsonProperty("/remote/sensors/set1/value")]
+        [JsonPropertyName("/remote/sensors/set1/value")]
         public RemoteSensorsControlsettingsUpValueClass RemoteSensorsSet1Value { get; set; }
 
-        [JsonProperty("/util/cellular/signal/trigger")]
+        [JsonPropertyName("/util/cellular/signal/trigger")]
         public TartuGecko UtilCellularSignalTrigger { get; set; }
 
-        [JsonProperty("/cloudInterface/config_received/value")]
+        [JsonPropertyName("/cloudInterface/config_received/value")]
         public TartuGecko CloudInterfaceConfigReceivedValue { get; set; }
 
-        [JsonProperty("/util/counter/trigger")]
+        [JsonPropertyName("/util/counter/trigger")]
         public TartuGecko UtilCounterTrigger { get; set; }
 
-        [JsonProperty("/util/cellular/statistics/enable")]
+        [JsonPropertyName("/util/cellular/statistics/enable")]
         public TartuGecko UtilCellularStatisticsEnable { get; set; }
 
-        [JsonProperty("/io/config")]
+        [JsonPropertyName("/io/config")]
         public RemoteSensorsControlsettingsUpValueClass IoConfig { get; set; }
 
-        [JsonProperty("/util/time/trigger")]
+        [JsonPropertyName("/util/time/trigger")]
         public TartuGecko UtilTimeTrigger { get; set; }
 
-        [JsonProperty("/util/cellular/statistics/value")]
+        [JsonPropertyName("/util/cellular/statistics/value")]
         public TartuGecko UtilCellularStatisticsValue { get; set; }
 
-        [JsonProperty("/virtual/config")]
+        [JsonPropertyName("/virtual/config")]
         public TartuGecko VirtualConfig { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/heartbeat_on_empty")]
+        [JsonPropertyName("/cloudInterface/store_forward/heartbeat_on_empty")]
         public TartuGecko CloudInterfaceStoreForwardHeartbeatOnEmpty { get; set; }
 
-        [JsonProperty("/util/sim/info/period")]
+        [JsonPropertyName("/util/sim/info/period")]
         public TartuGecko UtilSimInfoPeriod { get; set; }
 
-        [JsonProperty("/util/cellular/signal/enable")]
+        [JsonPropertyName("/util/cellular/signal/enable")]
         public TartuGecko UtilCellularSignalEnable { get; set; }
 
-        [JsonProperty("/util/counter/value")]
+        [JsonPropertyName("/util/counter/value")]
         public TartuGecko UtilCounterValue { get; set; }
 
-        [JsonProperty("/remote/sensors/set1/trigger")]
+        [JsonPropertyName("/remote/sensors/set1/trigger")]
         public TartuGecko RemoteSensorsSet1Trigger { get; set; }
 
-        [JsonProperty("/remote/sensors/set1/period")]
+        [JsonPropertyName("/remote/sensors/set1/period")]
         public TartuGecko RemoteSensorsSet1Period { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/storage_empty")]
+        [JsonPropertyName("/cloudInterface/store_forward/storage_empty")]
         public TartuGecko CloudInterfaceStoreForwardStorageEmpty { get; set; }
 
-        [JsonProperty("/diagnostic/status/value")]
+        [JsonPropertyName("/diagnostic/status/value")]
         public TartuGecko DiagnosticStatusValue { get; set; }
 
-        [JsonProperty("/util/delay/value")]
+        [JsonPropertyName("/util/delay/value")]
         public TartuGecko UtilDelayValue { get; set; }
 
-        [JsonProperty("/cloudInterface/status_line/enable")]
+        [JsonPropertyName("/cloudInterface/status_line/enable")]
         public TartuGecko CloudInterfaceStatusLineEnable { get; set; }
 
-        [JsonProperty("/util/cellular/signal/value")]
+        [JsonPropertyName("/util/cellular/signal/value")]
         public RemoteSensorsControlsettingsUpValueClass UtilCellularSignalValue { get; set; }
 
-        [JsonProperty("/actions/console")]
+        [JsonPropertyName("/actions/console")]
         public TartuGecko ActionsConsole { get; set; }
 
-        [JsonProperty("/util/cellular/signal/period")]
+        [JsonPropertyName("/util/cellular/signal/period")]
         public CloudInterfaceDeveloperModeInactivityPeriod UtilCellularSignalPeriod { get; set; }
 
-        [JsonProperty("/util/cellular/statistics/period")]
+        [JsonPropertyName("/util/cellular/statistics/period")]
         public TartuGecko UtilCellularStatisticsPeriod { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/flush")]
+        [JsonPropertyName("/cloudInterface/store_forward/flush")]
         public TartuGecko CloudInterfaceStoreForwardFlush { get; set; }
 
-        [JsonProperty("/util/time/period")]
+        [JsonPropertyName("/util/time/period")]
         public TartuGecko UtilTimePeriod { get; set; }
 
-        [JsonProperty("/diagnostic/logs/trigger")]
+        [JsonPropertyName("/diagnostic/logs/trigger")]
         public TartuGecko DiagnosticLogsTrigger { get; set; }
 
-        [JsonProperty("/location/coordinates/period")]
+        [JsonPropertyName("/location/coordinates/period")]
         public TartuGecko LocationCoordinatesPeriod { get; set; }
 
-        [JsonProperty("/util/time/value")]
+        [JsonPropertyName("/util/time/value")]
         public TartuGecko UtilTimeValue { get; set; }
 
-        [JsonProperty("/remote/sensors/controlsettingsdownj")]
+        [JsonPropertyName("/remote/sensors/controlsettingsdownj")]
         public TartuGecko RemoteSensorsControlsettingsdownj { get; set; }
 
-        [JsonProperty("/util/cellular/cells/trigger")]
+        [JsonPropertyName("/util/cellular/cells/trigger")]
         public TartuGecko UtilCellularCellsTrigger { get; set; }
 
-        [JsonProperty("/cloudInterface/developer_mode/close_on_inactivity")]
+        [JsonPropertyName("/cloudInterface/developer_mode/close_on_inactivity")]
         public TartuGecko CloudInterfaceDeveloperModeCloseOnInactivity { get; set; }
 
-        [JsonProperty("/io/config/serial")]
+        [JsonPropertyName("/io/config/serial")]
         public TartuGecko IoConfigSerial { get; set; }
 
-        [JsonProperty("/remote/sensors/controlsettingsUp/trigger")]
+        [JsonPropertyName("/remote/sensors/controlsettingsUp/trigger")]
         public TartuGecko RemoteSensorsControlsettingsUpTrigger { get; set; }
 
-        [JsonProperty("/util/time/offset")]
+        [JsonPropertyName("/util/time/offset")]
         public CloudInterfaceDeveloperModeInactivityPeriod UtilTimeOffset { get; set; }
 
-        [JsonProperty("/set_1")]
+        [JsonPropertyName("/set_1")]
         public RemoteSensorsControlsettingsUpValueClass Set1 { get; set; }
 
-        [JsonProperty("/util/cellular/cells/value")]
+        [JsonPropertyName("/util/cellular/cells/value")]
         public TartuGecko UtilCellularCellsValue { get; set; }
 
-        [JsonProperty("/cloudInterface/developer_mode/inactivity_period")]
+        [JsonPropertyName("/cloudInterface/developer_mode/inactivity_period")]
         public CloudInterfaceDeveloperModeInactivityPeriod CloudInterfaceDeveloperModeInactivityPeriod { get; set; }
 
-        [JsonProperty("/location/coordinates/value")]
+        [JsonPropertyName("/location/coordinates/value")]
         public TartuGecko LocationCoordinatesValue { get; set; }
 
-        [JsonProperty("/util/ulpm/shutdown")]
+        [JsonPropertyName("/util/ulpm/shutdown")]
         public TartuGecko UtilUlpmShutdown { get; set; }
 
-        [JsonProperty("/util/sim/info/enable")]
+        [JsonPropertyName("/util/sim/info/enable")]
         public TartuGecko UtilSimInfoEnable { get; set; }
 
-        [JsonProperty("/cloudInterface/store_forward/persistence/period")]
+        [JsonPropertyName("/cloudInterface/store_forward/persistence/period")]
         public CloudInterfaceDeveloperModeInactivityPeriod CloudInterfaceStoreForwardPersistencePeriod { get; set; }
 
-        [JsonProperty("/remote/sensors/uplinkMeasured/trigger")]
+        [JsonPropertyName("/remote/sensors/uplinkMeasured/trigger")]
         public TartuGecko RemoteSensorsUplinkMeasuredTrigger { get; set; }
     }
 
     public class TartuGecko
     {
-        [JsonProperty("dt")]
+        [JsonPropertyName("dt")]
         public Dt Dt { get; set; }
 
-        [JsonProperty("t")]
+        [JsonPropertyName("t")]
         public T T { get; set; }
 
-        [JsonProperty("m")]
+        [JsonPropertyName("m")]
         public bool M { get; set; }
 
-        [JsonProperty("ts", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("ts")]
         public long? Ts { get; set; }
 
-        [JsonProperty("v", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("v")]
         public bool? V { get; set; }
 
-        [JsonProperty("d", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("d")]
         public bool? D { get; set; }
 
-        [JsonProperty("s", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("s")]
         public string S { get; set; }
     }
 
     public class CloudInterfaceDeveloperModeInactivityPeriod
     {
-        [JsonProperty("dt")]
+        [JsonPropertyName("dt")]
         public Dt Dt { get; set; }
 
-        [JsonProperty("t")]
+        [JsonPropertyName("t")]
         public T T { get; set; }
 
-        [JsonProperty("d")]
+        [JsonPropertyName("d")]
         public long D { get; set; }
 
-        [JsonProperty("v")]
+        [JsonPropertyName("v")]
         public long V { get; set; }
 
-        [JsonProperty("m")]
+        [JsonPropertyName("m")]
         public bool M { get; set; }
 
-        [JsonProperty("ts")]
+        [JsonPropertyName("ts")]
         public long Ts { get; set; }
     }
 
     public class RemoteSensorsControlsettingsUpValueClass
     {
-        [JsonProperty("dt")]
+        [JsonPropertyName("dt")]
         public Dt Dt { get; set; }
 
-        [JsonProperty("t")]
+        [JsonPropertyName("t")]
         public string T { get; set; }
 
-        [JsonProperty("d", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("d")]
         public string D { get; set; }
 
-        [JsonProperty("v")]
+        [JsonPropertyName("v")]
         public string V { get; set; }
 
-        [JsonProperty("m")]
+        [JsonPropertyName("m")]
         public bool M { get; set; }
 
-        [JsonProperty("ts")]
+        [JsonPropertyName("ts")]
         public long Ts { get; set; }
 
-        [JsonProperty("s", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("s")]
         public string S { get; set; }
     }
 
     public class Head
     {
-        [JsonProperty("status")]
+        [JsonPropertyName("status")]
         public long Status { get; set; }
 
-        [JsonProperty("ok")]
+        [JsonPropertyName("ok")]
         public bool Ok { get; set; }
 
-        [JsonProperty("messages")]
+        [JsonPropertyName("messages")]
         public object[] Messages { get; set; }
 
-        [JsonProperty("errors")]
+        [JsonPropertyName("errors")]
         public object[] Errors { get; set; }
 
-        //[JsonProperty("localaction")]
+        //[JsonPropertyName("localaction")]
         //public LocalActions References { get; set; }
 
-        [JsonProperty("version")]
+        [JsonPropertyName("version")]
         public long Version { get; set; }
     }
 
@@ -652,180 +647,186 @@ namespace lc_octvmarsh
 
     public class OctaveObject
     {
-        public static OctaveObject FromJson(string json) => JsonConvert.DeserializeObject<OctaveObject>(json, Converter.Settings);
+        public static OctaveObject FromJson(string json) => JsonSerializer.Deserialize<OctaveObject>(json);
     }
 
     public partial class OctaveStreamEvent
     {
-        [JsonProperty("head")]
+        [JsonPropertyName("head")]
         public Head Head { get; set; }
 
-        [JsonProperty("body")]
+        [JsonPropertyName("body")]
         public Body Body { get; set; }
 
-        public static OctaveStreamEvent FromJson(string json) => JsonConvert.DeserializeObject<OctaveStreamEvent>(json, Converter.Settings);
+        public static OctaveStreamEvent FromJson(string json) => JsonSerializer.Deserialize<OctaveStreamEvent>(json);
     }
 
     public class EventStream
     {
-        [JsonProperty("head")]
+        [JsonPropertyName("head")]
         public Head Head { get; set; }
 
-        [JsonProperty("body")]
+        [JsonPropertyName("body")]
         public Body[] Body { get; set; }
 
-        public static EventStream FromJson(string json) => JsonConvert.DeserializeObject<EventStream>(json, Converter.Settings);
+        public static EventStream FromJson(string json) => JsonSerializer.Deserialize<EventStream>(json);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this OctaveObject self) => JsonConvert.SerializeObject(self, Converter.Settings);
-        public static string ToJson(this EventStream self) => JsonConvert.SerializeObject(self, Converter.Settings);
-        public static string ToJson(this OctaveStreamEvent self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this OctaveObject self) => JsonSerializer.Serialize(self);
+        public static string ToJson(this EventStream self) => JsonSerializer.Serialize(self);
+        public static string ToJson(this OctaveStreamEvent self) => JsonSerializer.Serialize(self);
     }
 
-    internal static class Converter
-    {
-        public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
-        {
-            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-            DateParseHandling = DateParseHandling.None,
-            Converters =
-            {
-                DtConverter.Singleton,
-                TConverter.Singleton,
-                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
-            },
-        };
-    }
 
-    internal class ParseStringConverter : JsonConverter
-    {
-        public override bool CanConvert(Type t) => t == typeof(long) || t == typeof(long?);
+    //TODO refactor not sure what it is used for
+    //internal static class Converter
+    //{
+    //    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
+    //    {
+    //        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+    //        DateParseHandling = DateParseHandling.None,
+    //        Converters =
+    //        {
+    //            DtConverter.Singleton,
+    //            TConverter.Singleton,
+    //            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal}
+    //        },
+    //    };
+    //}
 
-        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
-        {
-            if (reader.TokenType == JsonToken.Null) return null;
-            var value = serializer.Deserialize<string>(reader);
-            long l;
-            if (Int64.TryParse(value, out l))
-            {
-                return l;
-            }
-            throw new Exception("Cannot unmarshal type long");
-        }
+    //TODO: REFACTOR
 
-        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
-        {
-            if (untypedValue == null)
-            {
-                serializer.Serialize(writer, null);
-                return;
-            }
-            var value = (long)untypedValue;
-            serializer.Serialize(writer, value.ToString());
-            return;
-        }
+    //    internal class ParseStringConverter : JsonConverter
+    //    {
+    //    public override bool CanConvert(Type t) => t == typeof(long) || t == typeof(long?);
 
-        public static readonly ParseStringConverter Singleton = new ParseStringConverter();
-    }
+    //    public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+    //    {
+    //        if (reader.TokenType == JsonToken.Null) return null;
+    //        var value = serializer.Deserialize<string>(reader);
+    //        long l;
+    //        if (Int64.TryParse(value, out l))
+    //        {
+    //            return l;
+    //        }
+    //        throw new Exception("Cannot unmarshal type long");
+    //    }
 
-    internal class DtConverter : JsonConverter
-    {
-        public override bool CanConvert(Type t) => t == typeof(Dt) || t == typeof(Dt?);
+    //    public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
+    //    {
+    //        if (untypedValue == null)
+    //        {
+    //            serializer.Serialize(writer, null);
+    //            return;
+    //        }
+    //        var value = (long)untypedValue;
+    //        serializer.Serialize(writer, value.ToString());
+    //        return;
+    //    }
 
-        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
-        {
-            if (reader.TokenType == JsonToken.Null) return null;
-            var value = serializer.Deserialize<string>(reader);
-            switch (value)
-            {
-                case "boolean":
-                    return Dt.Boolean;
-                case "json":
-                    return Dt.Json;
-                case "numeric":
-                    return Dt.Numeric;
-                case "string":
-                    return Dt.String;
-                case "trigger":
-                    return Dt.Trigger;
-            }
-            throw new Exception("Cannot unmarshal type Dt");
-        }
+    //    public static readonly ParseStringConverter Singleton = new ParseStringConverter();
+    //}
 
-        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
-        {
-            if (untypedValue == null)
-            {
-                serializer.Serialize(writer, null);
-                return;
-            }
-            var value = (Dt)untypedValue;
-            switch (value)
-            {
-                case Dt.Boolean:
-                    serializer.Serialize(writer, "boolean");
-                    return;
-                case Dt.Json:
-                    serializer.Serialize(writer, "json");
-                    return;
-                case Dt.Numeric:
-                    serializer.Serialize(writer, "numeric");
-                    return;
-                case Dt.String:
-                    serializer.Serialize(writer, "string");
-                    return;
-                case Dt.Trigger:
-                    serializer.Serialize(writer, "trigger");
-                    return;
-            }
-            throw new Exception("Cannot marshal type Dt");
-        }
+    //TODO: REFACTOR
+    //internal class DtConverter : JsonConverter
+    //{
+    //    public override bool CanConvert(Type t) => t == typeof(Dt) || t == typeof(Dt?);
 
-        public static readonly DtConverter Singleton = new DtConverter();
-    }
+    //    public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+    //    {
+    //        if (reader.TokenType == JsonToken.Null) return null;
+    //        var value = serializer.Deserialize<string>(reader);
+    //        switch (value)
+    //        {
+    //            case "boolean":
+    //                return Dt.Boolean;
+    //            case "json":
+    //                return Dt.Json;
+    //            case "numeric":
+    //                return Dt.Numeric;
+    //            case "string":
+    //                return Dt.String;
+    //            case "trigger":
+    //                return Dt.Trigger;
+    //        }
+    //        throw new Exception("Cannot unmarshall type Dt");
+    //    }
 
-    internal class TConverter : JsonConverter
-    {
-        public override bool CanConvert(Type t) => t == typeof(T) || t == typeof(T?);
+    //    public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
+    //    {
+    //        if (untypedValue == null)
+    //        {
+    //            serializer.Serialize(writer, null);
+    //            return;
+    //        }
+    //        var value = (Dt)untypedValue;
+    //        switch (value)
+    //        {
+    //            case Dt.Boolean:
+    //                serializer.Serialize(writer, "boolean");
+    //                return;
+    //            case Dt.Json:
+    //                serializer.Serialize(writer, "json");
+    //                return;
+    //            case Dt.Numeric:
+    //                serializer.Serialize(writer, "numeric");
+    //                return;
+    //            case Dt.String:
+    //                serializer.Serialize(writer, "string");
+    //                return;
+    //            case Dt.Trigger:
+    //                serializer.Serialize(writer, "trigger");
+    //                return;
+    //        }
+    //        throw new Exception("Cannot marshal type Dt");
+    //    }
 
-        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
-        {
-            if (reader.TokenType == JsonToken.Null) return null;
-            var value = serializer.Deserialize<string>(reader);
-            switch (value)
-            {
-                case "input":
-                    return T.Input;
-                case "output":
-                    return T.Output;
-            }
-            throw new Exception("Cannot unmarshal type T");
-        }
+    //    public static readonly DtConverter Singleton = new DtConverter();
+    //}
 
-        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
-        {
-            if (untypedValue == null)
-            {
-                serializer.Serialize(writer, null);
-                return;
-            }
-            var value = (T)untypedValue;
-            switch (value)
-            {
-                case T.Input:
-                    serializer.Serialize(writer, "input");
-                    return;
-                case T.Output:
-                    serializer.Serialize(writer, "output");
-                    return;
-            }
-            throw new Exception("Cannot marshal type T");
-        }
+    //TODO: REFACTOR
+    //internal class TConverter : JsonConverter
+    //{
+    //    public override bool CanConvert(Type t) => t == typeof(T) || t == typeof(T?);
 
-        public static readonly TConverter Singleton = new TConverter();
-    }
+    //    public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+    //    {
+    //        if (reader.TokenType == JsonToken.Null) return null;
+    //        var value = serializer.Deserialize<string>(reader);
+    //        switch (value)
+    //        {
+    //            case "input":
+    //                return T.Input;
+    //            case "output":
+    //                return T.Output;
+    //        }
+    //        throw new Exception("Cannot unmarshal type T");
+    //    }
+
+    //    public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
+    //    {
+    //        if (untypedValue == null)
+    //        {
+    //            serializer.Serialize(writer, null);
+    //            return;
+    //        }
+    //        var value = (T)untypedValue;
+    //        switch (value)
+    //        {
+    //            case T.Input:
+    //                serializer.Serialize(writer, "input");
+    //                return;
+    //            case T.Output:
+    //                serializer.Serialize(writer, "output");
+    //                return;
+    //        }
+    //        throw new Exception("Cannot marshal type T");
+    //    }
+
+    //    public static readonly TConverter Singleton = new TConverter();
+    //}
 
 }
 
@@ -837,10 +838,10 @@ public class OC_ProvisionResult
 
     }
 
-    [JsonProperty("head")]
+    [JsonPropertyName("head")]
     public Head Head { get; set; }
 
-    [JsonProperty("body")]
+    [JsonPropertyName("body")]
     public Body Body { get; set; }
 }
 
@@ -861,46 +862,46 @@ public class Body
 
 }
 
-    public class Details
-    {
-        public DeviceDetails DeviceDetails { get; set; }
-    }
+public class Details
+{
+    public DeviceDetails DeviceDetails { get; set; }
+}
 
-    public class DeviceDetails
-    {
-        [JsonProperty ("fsn")]
-        public string Fsn { get; set; }
+public class DeviceDetails
+{
+    [JsonPropertyName("fsn")]
+    public string Fsn { get; set; }
 
-        [JsonProperty("imei")]
-        public string Imei { get; set; }
-    }
+    [JsonPropertyName("imei")]
+    public string Imei { get; set; }
+}
 
-    public  class Status
-    {
-    }
+public class Status
+{
+}
 
 public class Head
 {
-    
+
     public Head()
     {
     }
-    
-    [JsonProperty("status")]
+
+    [JsonPropertyName("status")]
     public long Status { get; set; }
 
-    [JsonProperty("ok")]
+    [JsonPropertyName("ok")]
     public bool Ok { get; set; }
 
-    [JsonProperty("messages")]
+    [JsonPropertyName("messages")]
     public List<object> Messages { get; set; }
-    
-    [JsonProperty("errors")]
+
+    [JsonPropertyName("errors")]
     public List<object> Errors { get; set; }
 
-    [JsonProperty("references")]
+    [JsonPropertyName("references")]
     public Status References { get; set; }
-    }
+}
 
 
 

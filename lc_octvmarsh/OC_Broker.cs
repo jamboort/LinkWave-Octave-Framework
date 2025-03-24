@@ -1,13 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿//using Newtonsoft.Json;
+using lc_octvmarsh.Utils;
+using System;
 //using System.Text.Json;
 //using RestSharp;
 //using System.Text.Json.Serialization;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using lc_octvmarsh.Utils;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace lc_octvmarsh
 {
@@ -63,7 +65,7 @@ namespace lc_octvmarsh
                     var response_ = client.GetAsync("").Result;
                     if (response_.IsSuccessStatusCode)
                     {
-                        OC_Device resOK = response_.Content.ReadAsAsync<OC_Device>().Result;
+                        OC_Device resOK = response_.Content.ReadFromJsonAsync<OC_Device>().Result;
                         if (resOK.Head.Status == 200)
                         {
                             OC_Device Device = new OC_Device();
@@ -98,7 +100,7 @@ namespace lc_octvmarsh
         /// Lists the devices comissioned in OCTAVE 
         /// </summary>
         /// <returns>An OC_Device instance</returns>
-        public async System.Threading.Tasks.Task<string> CreateNewOvtaveDevicesAsync(string Name, string IMEI, string SerialNumber)
+        public async System.Threading.Tasks.Task<string> CreateNewOctaveDevicesAsync(string Name, string IMEI, string SerialNumber)
         {
             try
             {
@@ -114,7 +116,7 @@ namespace lc_octvmarsh
                 retDevice.DeviceName = Name;
                 retDevice.IMEI = IMEI;
                 retDevice.SerialNumber = SerialNumber;
-                
+
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri(baseAddress);
@@ -122,7 +124,7 @@ namespace lc_octvmarsh
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     client.DefaultRequestHeaders.Add("X-Auth-Token", this._OctaveToken);
                     client.DefaultRequestHeaders.Add("X-Auth-User", this._OctaveUser);
-                  
+
                     var values = new Dictionary<string, string>
                     {
                         { "name", retDevice.DeviceName },
@@ -130,7 +132,7 @@ namespace lc_octvmarsh
                         { "fsn",  retDevice.SerialNumber },
                     };
 
-                    var json = JsonConvert.SerializeObject(values, Formatting.Indented);
+                    var json = JsonSerializer.Serialize(values);
                     var stringContent = new StringContent(json);
                     //    return Ok(responseString);
 
@@ -138,7 +140,7 @@ namespace lc_octvmarsh
                     var responseString = await response_.Content.ReadAsStringAsync();
                     if (response_.IsSuccessStatusCode)
                     {
-                        var resOK = response_.Content.ReadAsAsync<OC_ProvisionResult>().Result;
+                        var resOK = response_.Content.ReadFromJsonAsync<OC_ProvisionResult>().Result;
                         if (resOK.Head.Status == 200)
                         {
                             OC_ProvisionResult Device = new OC_ProvisionResult();
@@ -168,7 +170,7 @@ namespace lc_octvmarsh
                     }
                     else
                     {
-                      
+
                         return response_.RequestMessage.ToString();
                     }
                 }

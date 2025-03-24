@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace lc_octvmarsh.Utils
 {
@@ -12,7 +8,7 @@ namespace lc_octvmarsh.Utils
     class OC_Utils
     {
         /// <summary>
-        /// Converst the Octave timestamp in unix format into a DateTime object. The octave timestamp comes in ms precision
+        /// Converts the Octave timestamp in Unix format into a DateTime object. The octave timestamp comes in ms precision
         /// </summary>
         /// <param name="unixTimeStamp"></param>
         /// <returns></returns>
@@ -20,8 +16,8 @@ namespace lc_octvmarsh.Utils
         {
             unixTimeStamp /= 1000;
             // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            System.DateTime dtDateTime = new DateTime(year: 1970, month: 1, day: 1, hour: 0, minute: 0, second: 0, millisecond: 0, kind: DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(value: unixTimeStamp).ToLocalTime();
             return dtDateTime;
         }
     }

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using Dapper;
-using System.Data;
 using System.Linq;
 
 namespace lc_octvmarsh
@@ -10,7 +9,7 @@ namespace lc_octvmarsh
     /// <summary>
     /// Manages all the data functionalities for the Linkwave database
     /// </summary>
-        public class Data_Broker
+    public class Data_Broker
     {
 
         #region Properties
@@ -31,20 +30,20 @@ namespace lc_octvmarsh
         {
 
         }
-      
+
         #endregion
 
         #region Public Methods
-   
+
         /// <summary>
-        /// Retrieves the list of avtive devices ID's from the database
+        /// Retrieves the list of active devices ID's from the database
         /// </summary>
         /// <returns>an array of strings containing the ID's or a List Empty if there are no devices active</returns>
         public string[] GetActiveDevicesIds()
         {
             var _DB_cnx_String = _Sett.cnxString;
             string sql = "SELECT * FROM Devices WHERE IsActive = 1";
-            var connection = new SqlConnection(_DB_cnx_String);
+            var connection = new SqlConnection(connectionString: _DB_cnx_String);
 
             {
                 var Devices = connection.Query(sql);
@@ -61,7 +60,7 @@ namespace lc_octvmarsh
         }
 
 
-       
+
         /// <summary>
         /// Retreives the list of devices ID's from the database based on the status of the devices
         /// </summary>
@@ -230,7 +229,7 @@ namespace lc_octvmarsh
                 if (DS_Device.Count() > 0)
                 {
                     LW_Device[] DVS = new LW_Device[DS_Device.Count()];
-                    { 
+                    {
 
                         int Pos = 0;
                         foreach (var Dev in DS_Device)
@@ -245,11 +244,13 @@ namespace lc_octvmarsh
                             Device.IMEI = Dev.IMEI;
                             Device.IsActive = Dev.IsActive;
                             Device.SerialNumber = Dev.SerialNumber;
-                            DVS.SetValue(Device,Pos);
+                            DVS.SetValue(Device, Pos);
 
-                            Pos++;                        }
-                    };
-                LW_Devices DeviceList = new LW_Devices(DVS);
+                            Pos++;
+                        }
+                    }
+                    ;
+                    LW_Devices DeviceList = new LW_Devices(DVS);
 
                     return DVS;
                 }
