@@ -10,8 +10,18 @@
     <Copyright>Copyright ©  2020</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="OC_Broker.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -44,15 +54,9 @@
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Files.Shares" Version="12.24.0-beta.1" />
     <PackageReference Include="Dapper" Version="2.1.66" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.0-rc.1.25451.107" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0-preview1.25257.1" />
-    <PackageReference Include="RestSharp" Version="112.1.1-alpha.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.4" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0-preview3.19128.7" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="7.0.0-preview.2.22152.2" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="10.0.0-rc.1.25451.107" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.1.25451.107" />
     <PackageReference Include="System.Text.Json" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="2.0.0" />
   </ItemGroup>
 </Project>

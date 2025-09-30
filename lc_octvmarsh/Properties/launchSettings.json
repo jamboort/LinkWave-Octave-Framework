@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "lc_octvmarsh": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "sqlDebugging": true,
+      "jsWebView2Debugging": true
+    }
+  }
+}

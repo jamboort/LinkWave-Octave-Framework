@@ -1,9 +1,5 @@
-﻿//using Newtonsoft.Json;
-using lc_octvmarsh.Utils;
+﻿using lc_octvmarsh.Utils;
 using System;
-//using System.Text.Json;
-//using RestSharp;
-//using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -94,7 +90,7 @@ namespace lc_octvmarsh
             }
             catch (Exception ex)
             {
-                throw new Exception("Unable to load a device from octave, method = GetOctaveDevices", ex);
+                throw new Exception(message: "Unable to load a device from octave, method = GetOctaveDevices", innerException: ex);
             }
         }
 
@@ -177,7 +173,7 @@ namespace lc_octvmarsh
             //            return response_.RequestMessage.ToString();
             //        }
             //    }
-        
+
             //catch (Exception ex)
             //{
             //    throw new Exception(message: "Unable to load a device from octave, method = GetOctaveDevices", innerException: ex);
@@ -301,18 +297,5 @@ namespace lc_octvmarsh
             Console.WriteLine(value: $"Response: {response.StatusCode}\n{result}");
 
         }
-    }
-
-
-   public static class AVC_Registration
-    {
-        public static string Token { get; set; } = string.Empty;
-        public static string RefreshToken { get; set; } = string.Empty;
-    }
-
-    public class AV_RegistrationAdditionalInfo
-    {
-        public string[] defaultApplications { get; set; } = { "4f19aef9c1b24203bb5c298a921da04e"};
-        public string offerId { get; set; } = "offerId";
     }
 }
