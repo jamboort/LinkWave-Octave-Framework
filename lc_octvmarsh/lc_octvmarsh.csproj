@@ -52,11 +52,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.24.0-beta.1" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.24.0" />
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0-preview1.25257.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.1.25451.107" />
-    <PackageReference Include="System.Text.Json" Version="10.0.0-rc.1.25451.107" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0-preview2.25289.6" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.0-rc.2.25502.107" />
+    <PackageReference Include="System.Text.Json" Version="10.0.0-rc.2.25502.107" />
   </ItemGroup>
 </Project>
