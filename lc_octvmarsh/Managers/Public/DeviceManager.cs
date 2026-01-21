@@ -15,7 +15,7 @@ namespace lc_octvmarsh.Managers.Public
         public async Task<string> ProvisionDevice(CreateNewDeviceDM device)
         {
             string json = JsonSerializer.Serialize(value: device);
-            var data = new StringContent(content: json, encoding: Encoding.UTF8, mediaType: "application/json");
+            StringContent data = new StringContent(content: json, encoding: Encoding.UTF8, mediaType: "application/json");
 
             string url = Properties.Resources.PartialProvisionDevice;
             url = url.Replace(oldValue: "<company_name>", newValue: Properties.Settings.Default.OctaveCompany);
